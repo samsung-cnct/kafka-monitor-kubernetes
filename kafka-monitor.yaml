@@ -8,6 +8,7 @@ spec:
   containers:
     - name: kafka-monitor
       image: quay.io/samsung_cnct/kafka-monitor:0.1
+      imagePullPolicy: Always
       ports:
       - containerPort: 8000
         name: gui
