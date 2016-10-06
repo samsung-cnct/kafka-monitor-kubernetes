@@ -4,7 +4,7 @@ How to build this image
 
 ### Build the container locally
 Decide where you would like the built container to be stored.  The 
-default is quay.io/samsung_cnct/kafak-monitor.  You can probably not
+default is quay.io/samsung_cnct/kafka-monitor.  You can probably not
 write to this location so you should update the Makefile with your
 repository name.  
 
