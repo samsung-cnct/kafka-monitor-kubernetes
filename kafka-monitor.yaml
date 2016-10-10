@@ -1,20 +1,27 @@
-apiVersion: v1
-kind: Pod
+apiVersion: extensions/v1beta1
+kind: Deployment
 metadata:
   name: kafka-monitor
-  labels:
-    app: kafka-monitor
 spec:
-  containers:
-    - name: kafka-monitor
-      image: quay.io/samsung_cnct/kafka-monitor:0.1
-      imagePullPolicy: Always
-      ports:
-      - containerPort: 8000
-        name: gui
-      - containerPort: 8778
-        name: metrics
-
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kafka-monitor
+  template:
+    metadata:
+      name: kafka-monitor
+      labels:
+        app: kafka-monitor
+    spec:
+      containers:
+        - name: kafka-monitor
+          image: quay.io/samsung_cnct/kubernetes-kafka-monitor:0.2
+          imagePullPolicy: Always
+          ports:
+          - containerPort: 8000
+            name: gui
+          - containerPort: 8778
+            name: metrics
 ---
 apiVersion: v1
 kind: Service

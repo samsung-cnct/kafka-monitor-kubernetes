@@ -14,8 +14,8 @@
 
 all: push
 
-TAG = 0.1
-PREFIX = quay.io/samsung_cnct/kafka-monitor
+TAG ?= 0.2
+PREFIX ?= quay.io/samsung_cnct/kubernetes-kafka-monitor
 
 container:
 	docker build -t $(PREFIX):$(TAG) .

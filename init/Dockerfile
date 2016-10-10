@@ -1,4 +1,4 @@
-FROM quay.io/coffeepac/kafka-monitor:0.1
+FROM quay.io/samsung_cnct/kafka-monitor:0.1
 
 MAINTAINER coffeepac@gmail.com
 
